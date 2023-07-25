@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button  class="btn">show content</button>
+    <div class="show"></div>
+    <button id="hide" >hide</button>
+    
+</body>
+<script>
+  
+    let divtag=document.querySelector(".btn")
+    divtag.onclick = function show(){
+        let div = document.createElement("div")
+        div.innerHTML="siri";
+        div.style.height="200px"
+        div.style.width="200px"
+        div.style.fontSize="50px"
+        div.style.textAlign="center";
+        div.style.backgroundColor="pink";
+        let show=document.querySelector(".show");
+		show.append(div);
+    }
+    let hide=document.createElement("button")
+    hide.onclick=function none(){
+            div.innerHTML="";
+            hide.innerHTML="";
+        }
+   
+
+</script>
+</html>
