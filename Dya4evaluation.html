@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+            .input{
+    padding:20px 350px;
+    border:1px solid black;
+    margin-top: 200px;
+    margin-left:350px;
+    font-size: 30px;
+}
+.btn{
+    padding:15px 80px;
+    border-radius: 5px;
+    background-color: rgb(9, 149, 149);
+    color:white;
+    font-size: 20px;
+}
+.delete{
+    padding:15px 60px;
+    border-radius: 5px;
+    background-color: rgb(9, 149, 149);
+    color:white;
+    font-size: 20px;
+    margin: 20px 0px 0px 1050px;
+
+}
+.display{
+    font-size: 30px;
+    margin-left: 350px;
+    margin-top: 30px;  
+}
+    </style>
+</head>
+<body>
+    <div>
+            <input class="input" type="text"></input>
+            <button class="btn">ADD</button>
+    </div>
+    <div class="display"></div>
+</body>
+<script>
+    let button=document.querySelector(".btn");
+button.onclick=function(){
+    let search=document.querySelector(".input").value;
+    
+    if(search===""){
+        alert("you write something");
+    }else{
+        let btn2=document.createElement("span");
+        btn2.setAttribute("class","todo");
+       
+        let del=document.createElement("button");
+        del.setAttribute("class","delete");
+        del.innerHTML="DELETE";
+        let div=document.createElement("div");
+        let display=document.querySelector(".display");
+        display.append(btn2,del,div);
+        btn2.append(search);
+
+        del.onclick=function(){
+            del.remove();
+            btn2.remove();
+        }
+
+    }
+}
+</script>
+</html>

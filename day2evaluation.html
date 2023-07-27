@@ -23,13 +23,14 @@
         div.style.textAlign="center";
         div.style.backgroundColor="pink";
         let show=document.querySelector(".show");
-		show.append(div);
+		
     }
     let hide=document.createElement("button")
     hide.onclick=function none(){
             div.innerHTML="";
             hide.innerHTML="";
         }
+        show.append(div);
    
 
 </script>
