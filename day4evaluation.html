@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World Page</title>
+  <style>
+    body {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <p id="helloText">Hello World!</p>
+  <input type="number" id="fontSize" placeholder="Enter font size">
+  <button id="Button">Apply</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const Button = document.getElementById("Button");
+      Button.addEventListener("click", function () {
+        const fontSizeInput = document.getElementById("fontSize");
+        const fontSize = fontSizeInput.value;
+        const helloText = document.getElementById("helloText");
+        helloText.style.fontSize = `${fontSize}px`;
+        helloText.style.color="pink";
+      });
+    });
+  </script>
+</body>
+</html>
