@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey siri</title>
+    <style>
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1400px;
+            margin: auto;
+            background-color:aqua;
+        }
+        .div {
+            border: 2px solid black;
+            height: 500px;
+            border-top-left-radius: 200px;
+            border-bottom-right-radius: 200px;
+            width: 400px;
+            margin-left: 200px;
+            margin-top: 200px;
+            background-color:pink;
+        }
+        .h1 {
+            text-align: center;
+        }
+        .h2 {
+            text-align: center;
+        }
+        .h3 {
+            text-align: center;
+        }
+        .h4 {
+            text-align: center;
+        }
+        .h5 {
+            text-align: center;
+        }
+        .h6 {
+            text-align: center;
+            height: 90px;
+            font-size: 20px;
+            margin: auto;
+            margin-top: 50px;
+            width: 120px;
+            padding-top: 40px;
+            background-color: white;
+           
+        }
+        .h7 {
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hey siri</h1>
+    <div class="main"></div>
+    <script>
+        const a = fetch("https://swapi.dev/api/people");
+        a.then(response => {
+            return response.json();
+        })
+        .then(data => {
+            const b = data.results;
+            for (let i = 0; i < b.length; i++) {
+                let div = document.createElement("div");
+                div.setAttribute("class", "div");
+
+                let h6 = document.createElement("h3");
+                h6.innerHTML = "siri " ;
+                h6.setAttribute("class", "h6");
+
+                let h1 = document.createElement("h1");
+                h1.setAttribute("class", "h1");
+                h1.innerHTML = b[i].name;
+
+                let h2 = document.createElement("h2");
+                h2.setAttribute("class", "h2");
+                h2.innerHTML = "Height: " + b[i].height;
+
+                let h3 = document.createElement("h3");
+                h3.setAttribute("class", "h3");
+                h3.innerHTML = "Gender: " + b[i].gender;
+
+                let h4 = document.createElement("h3");
+                h4.setAttribute("class", "h4");
+                h4.innerHTML = "Hair Color: " + b[i].hair_color;
+
+                let h5 = document.createElement("h3");
+                h5.setAttribute("class", "h5");
+                h5.innerHTML = "Mass: " + b[i].mass;
+
+                let h7 = document.createElement("h3");
+                h7.setAttribute("class", "h7");
+                h7.innerHTML = "Eye Color: " + b[i].eye_color;
+
+                let main = document.querySelector(".main");
+                div.append(h6, h1, h2, h3, h4, h5, h7);
+                main.append(div);
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    </script>
+</body>
+</html>

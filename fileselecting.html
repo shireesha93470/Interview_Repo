@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Selection Example</title>
+</head>
+<body>
+    <input type="file" id="fileInput" multiple>
+    <div id="selectedFiles"></div>
+
+    <script src=>
+        // Get references to the HTML elements
+const fileInput = document.getElementById('fileInput');
+const selectedFilesDiv = document.getElementById('selectedFiles');
+
+// Add an event listener for file selection
+fileInput.addEventListener('change', handleFileSelect);
+
+function handleFileSelect(event) {
+    const selectedFiles = event.target.files; // Array of selected files
+    selectedFilesDiv.innerHTML = ''; // Clear previous selections
+
+    // Display selected file names
+    for (let i = 0; i < selectedFiles.length; i++) {
+        const file = selectedFiles[i];
+        const fileName = file.name;
+        const fileSize = formatFileSize(file.size);
+
+        const fileDiv = document.createElement('div');
+        fileDiv.textContent = `${fileName} (${fileSize})`;
+        selectedFilesDiv.appendChild(fileDiv);
+    }
+}
+
+// Function to format file size
+function formatFileSize(size) {
+    if (size < 1024) {
+        return size + ' B';
+    } else if (size < 1024 * 1024) {
+        return (size / 1024).toFixed(2) + ' KB';
+    } else {
+        return (size / (1024 * 1024)).toFixed(2) + ' MB';
+    }
+}
+
+    </script>
+</body>
+</html>

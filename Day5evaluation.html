@@ -31,18 +31,31 @@
             background-image: url("https://www.telugu360.com/wp-content/uploads/2023/05/Anni-Manchi-Sakunamule-Movie-Review.jpg");
             }
             }
+            .name{
+                margin-top: 1000px;
+            }
+            #mivideo{
+                margin-top: 100px;
+            }
     </style>
 </head>
 <body>
     <div class="main"> </div>
-        <video width="50%" 
-               height="50%"
-               margin-top="300px"
-               src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200513195558/Placement100-_-GeeksforGeeks-1.mp4" 
-               controls>
+        
+      <video id="myVideo" width="520" height="540">
+        <source src="https://media.geeksforgeeks.org/wp-content/uploads/20200513195558/Placement100-_-GeeksforGeeks-1.mp4" type="video/mp4">
       </video>
+      <button class="name" onclick="myFunction()">Try it</button>
+
    
     <div class="sub"></div>
 </body>
+
+    <script>
+function myFunction() {
+  document.getElementById("myVideo").controls = true;
+}
+</script>
+
+</script>
 </html>
