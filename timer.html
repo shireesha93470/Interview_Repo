@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<style>
+     .div {
+         width: 30px;
+          height: 30px;
+         border: 1px solid black;
+ }
+</style>
+<body>
+     <div class="div"></div>
+     <button class="btn">start</button>
+     <button class="btn2">stop</button>
+</body>
+<script>
+     let btn1 = document.querySelector(".btn");
+     let div = document.querySelector(".div");
+     let timeoutId; // Variable to store the timeout ID
+     let i = 1;
+
+     btn1.onclick = function() {
+    // Clear any existing timeout
+     clearTimeout(timeoutId);
+    // Function to update the div with the current count
+     function updateCount() {
+     div.innerText = i;
+         i++;
+
+     // Stop updating when i exceeds 60
+         if (i <= 60) {
+             timeoutId = setTimeout(updateCount, 1000);
+     }
+ }
+
+    updateCount();
+ }
+
+     let btn2 = document.querySelector(".btn2")
+     btn2.onclick = function() {
+    // Clear the timeout and reset the count
+    clearTimeout(timeoutId);
+    div.innerText = "";
+     i = 1;
+ }
+</script>
+</html>

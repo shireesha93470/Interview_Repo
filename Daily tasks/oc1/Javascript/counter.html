@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <p class="count">Count: 0</p>
+    <button class="inc" onClick="Increment()">Increment</button>
+    <button class="dec" onClick="Decrement()">Decrement</button>
+
+    <script>
+        let count = 0;
+        const counterElement = document.querySelector(".count"); // Use querySelector to select the first element with the "count" class
+
+        function Increment() {
+            count++;
+            counterElement.textContent = "Count: " + count;
+        }
+
+        function Decrement() {
+            if (count > 0) {
+                count--;
+                counterElement.textContent = "Count: " + count;
+            }
+        }
+    </script>
+</body>
+</html>
